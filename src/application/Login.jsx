@@ -9,7 +9,7 @@ const defaultProps = {};
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.debug = GetDeubg('app:login');
+        this.debug = GetDebug('app:login');
     }
 
     signInGoogle() {
