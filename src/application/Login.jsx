@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import GetDebug from 'setup';
 import Actions from 'actions/Actions';
 
-const LoginDebug = GetDebug('app:login');
 const propTypes = {};
 
 const defaultProps = {};
@@ -10,10 +9,11 @@ const defaultProps = {};
 class Login extends React.Component {
     constructor(props) {
         super(props);
+        this.debug = GetDeubg('app:login');
     }
 
     signInGoogle() {
-        LoginDebug("Starting Google SignIn");
+        this.debug("Starting Google SignIn");
         Actions.GoogleSignIn();
     }
 
