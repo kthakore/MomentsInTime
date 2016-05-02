@@ -9,7 +9,8 @@ function createActions(actions) {
 }
 
 const Actions = createActions([
-    "GoogleSignIn"
+    "GoogleSignIn",
+    "SignOut"
 ]);
 
 

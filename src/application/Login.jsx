@@ -10,18 +10,21 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.debug = GetDebug('app:login');
+        this.onClickGoogleSignin.bind(this);
     }
 
-    signInGoogle() {
-        this.debug("Starting Google SignIn");
+    onClickGoogleSignin() {
         Actions.GoogleSignIn();
+        this.debug("Starting Google SignIn");
+
     }
 
     render() {
         return (
             <div className="login">
-            <h1>OAuth2 SignIn</h1>
-            <button className="btn btn-primary" onClick={this.signInGoogle}>Google Sign In</button>
+                <h1>OAuth2 SignIn</h1>
+                {/* the below () => ... is because handlers no longer pass in context to *this* */}
+                <button className="btn btn-primary" onClick={() => {this.onClickGoogleSignin() } }>Google Sign In</button>
             </div> 
         );
     }
