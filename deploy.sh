@@ -2,6 +2,8 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
+node src/prod.config.js > src/config.js
+
 # Build the project.
 node_modules/.bin/webpack --progress -p 
 
@@ -20,3 +22,5 @@ git push origin master
 git subtree push --prefix=dist git@me.github.com:kthakore/MomentsInTime.git gh-pages
 
 git push origin `git subtree split --prefix=dist master`:gh-pages --force
+
+node src/dev.config.js > src/config.js
