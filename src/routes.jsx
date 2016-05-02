@@ -20,8 +20,10 @@ class NoMatch extends React.Component{
 class About extends React.Component{
     render () {
         return (<div> <h1>Moments In Time</h1> 
-            <p> Moments In Time is a machine learning experimenti
-                to see if your historical google Calendar data can tell you the best times to accomplish habits, do work or have less stress.</p>
+            <p> Moments In Time is a machine learning experiment
+                to see if your historical google Calendar data can 
+                tell you the best times to accomplish habits, do work and 
+                have less stress.</p>
         </div>)
     }
 };
