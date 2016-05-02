@@ -2,8 +2,6 @@
 #
 .DS_Store
 src/config.js
-dist/
-dist/bundle.js
 
 # Xcode
 #
