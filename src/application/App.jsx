@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import Header from './Header/Header'
 import AuthStore from 'stores/Auth'
+import CalendarStore from 'stores/Calendar'
 import getDebug from 'setup'
 
 

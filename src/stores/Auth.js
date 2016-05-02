@@ -17,6 +17,7 @@ class AuthStore extends Store {
         this.listenTo(Actions.GoogleSignIn, this.onGoogleSignIn);
         this.listenTo(Actions.SignOut, this.onSignOut);
         this.debug = authStoreDebug;
+        this.debug("Constructed");
         this._check_LoggedIn();
     }
 
@@ -52,12 +53,11 @@ class AuthStore extends Store {
          self.trigger({
                 name: "LoggedOut:Success"
             });
-
         }, function (e) {
           self.trigger({
                 name: "LoggedOut:Failed"
             });
-
+            //Actions Remove Data
 
         });
     }
@@ -97,6 +97,10 @@ class AuthStore extends Store {
 
     GetLoggedIn() {
         return this.state.loggedIn;
+    }
+
+    GetUserData() {
+        return this.state.userdata;
     }
 
 };

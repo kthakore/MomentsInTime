@@ -10,7 +10,8 @@ function createActions(actions) {
 
 const Actions = createActions([
     "GoogleSignIn",
-    "SignOut"
+    "SignOut",
+    "FetchCalendarList"
 ]);
 
 
