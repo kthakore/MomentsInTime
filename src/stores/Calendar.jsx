@@ -48,11 +48,15 @@ class CalendarStore extends Store {
         let self = this;
         $.get( this._create_authed_url('users/me/calendarList') ).then(function(json) {
             self.debug(json);
+            self.state.calendars = _.get(json, 'items');
         }, function (e) {
             self.debug(e);
         });
     }
 
+    GetCalendars() {
+        return _.get(this.state, 'calendars', [{ "id" : "asd", "description" : "test" }]);
+    }
 
 
 }

@@ -20,24 +20,38 @@ class Header extends React.Component {
         Actions.SignOut();
     }
 
+    loggedInNav() {
+
+        if (this.state.loggedIn) {
+
+            return (
+                <li><Link to="/calendars">Your Calendars</Link></li>
+
+            )
+        }
+    }
+
     render() {
         this.debug(this.state);
         return (
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        
+
                         <Link to="/" className="navbar-brand">Moments In Time</Link>
                     </div>
+                    <ul className="nav navbar-nav navbar-left">
+                        {this.loggedInNav()}
+                    </ul>
                     <ul className="nav navbar-nav navbar-right">
                         {this.state.loggedIn ? (
                             <li><button className="btn btn-danger" onClick={this.onClickSignout} >Signout</button></li>
-                         ) : ( 
+                            ) : ( 
                             <li><Link to="/login">Login</Link></li>
-                        )}
-                    </ul>
-                </div>
-            </nav>
+                            )}
+                        </ul>
+                    </div>
+                </nav>
         )
 
     }

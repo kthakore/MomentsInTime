@@ -19,8 +19,6 @@ class App extends React.Component {
         let self = this;
         this.debug('DidMount');
         this.unsubscribe = AuthStore.listen((evt) => { self.onAuthChange(evt) });
-        this.debug(AuthStore);
-        this.debug(this);
     }
 
     componentWillUnmount() {

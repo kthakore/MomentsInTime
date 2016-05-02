@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 import App from './application/App.jsx'
 import Login from './application/Login.jsx'
 import Authenticated from './application/authenticated/Authenticated.jsx'
+import Calendars from './application/authenticated/Calendars/Calendars.jsx'
 
 class Welcome extends React.Component{
     render () {
@@ -35,6 +36,7 @@ const MainRouter = (
             <Route path="login" component={Login} />
             <Route component={Authenticated}>
                 <Router path="welcome" component={Welcome} />        
+                <Router path="calendars" component={Calendars} />
             </Route>
             <Route path="*" component={NoMatch} />
         </Route>
