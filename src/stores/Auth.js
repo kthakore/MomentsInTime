@@ -67,7 +67,7 @@ class AuthStore extends Store {
         self.state.userdata = {};
         self.state.loggedIn = false;
         // add calendar to scope
-        hello('google').login({scope: 'email,openid'}, function (userdata) {
+        hello('google').login({scope: 'email,openid,https://www.googleapis.com/auth/calendar'}, function (userdata) {
             self.state.userdata = userdata.authResponse;
             self.state.loggedIn = true;
             self.debug('Login: ', self.state.userdata, self);
@@ -77,6 +77,8 @@ class AuthStore extends Store {
             });
             self.debug('Signin Success');
         }, function () {
+            self.state.userdata = {};
+            self.state.loggedIn = false;
             self.trigger({
                 name: "LoggedIn:Failed",
                 state: self.state
